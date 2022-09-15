@@ -1,40 +1,65 @@
 <template>
   <div class="hello">
-    <h1 class="text-primary font-weight-bold">{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <section class="text-center text-lg-start">
+    <!-- Jumbotron -->
+      <div class="container py-4">
+        <div class="row g-0 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card cascading-right" style="
+                background: hsla(0, 0%, 100%, 0.55);
+                backdrop-filter: blur(30px);
+                ">
+              <div class="card-body p-5 shadow-5 text-center">
+                <h2 class="fw-bold mb-5">My image gallery</h2>
+                <form v-on:submit.prevent="login">
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input type="email" id="userEmail" class="form-control" placeholder="Email adress" v-model="userEmail"/>
+                    <!-- <label class="form-label" for="userEmail">Email address</label> -->
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" id="userPassword" class="form-control" placeholder="Password" v-model="userPassword"/>
+                    <!-- <label class="form-label" for="form3Example4">Password</label> -->
+                  </div>
+
+                  <!-- Submit button -->
+                  <button type="submit" class="btn btn-primary btn-block mb-4">
+                    Sign up
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <img src="@/assets/background-app.jpeg" class="w-100 rounded-4 shadow-4"
+              alt="" />
+          </div>
+        </div>
+      </div>
+    <!-- Jumbotron -->
+  </section>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data: function() {
+    return {
+      userEmail: "",
+      userPassword: "",
+      loginError: false,
+      errorMsg: "",
+    }
+  },
+  methods: {
+    login() {
+      console.log(this.userPassword);
+    }
+  },
   props: {
     msg: String
   }
@@ -58,3 +83,19 @@ a {
   color: #42b983;
 }
 </style>
+
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+
+    .hello{
+      background-color: rgba(245, 167, 179, 0.3);
+    }
+  </style>
