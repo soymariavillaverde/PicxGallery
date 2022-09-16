@@ -11,27 +11,31 @@
 import HelloWorld from '@/components/HelloWorld.vue'
 import PhotoCard from '@/components/PhotoCard.vue'
 
-
 export default {
   name: 'Home',
   components: {
     HelloWorld,
     PhotoCard
   },
-  methods: {
+  /* data() {
+    return {
+     
+    };
+  }, */
+//methods: {
     // vinculo aquí la API porquue es la vista que va a recibir las tarjetas
-    loadPokeAPI() {
-      var url = "https://pokeapi.co/api/v2/pokemon";
-      return fetch(url)
-        .then((res) => res.json())
-        .then((data) => {
-          this.characters = data.data;
-        });
-    },
-  },
-  created() {
-    this.loadPokeAPI();
-  },
+    // loadPokeAPI() {
+    //   var url = "https://pokeapi.co/api/v2/pokemon";
+    //   return fetch(url)
+    //     .then((res) => res.json())
+    //     .then((data) => {
+    //       this.characters = data.data;
+    //     });
+    // },
+  // },
+  // created() {
+  //   // this.loadPokeAPI();
+  // }
 }
 </script>
 
