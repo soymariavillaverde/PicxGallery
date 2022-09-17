@@ -1,101 +1,152 @@
 <template>
-  <div class="hello">
-    <section class="text-center text-lg-start">
-    <!-- Jumbotron -->
-      <div class="container py-4">
-        <div class="row g-0 align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="card cascading-right" style="
-                background: hsla(0, 0%, 100%, 0.55);
-                backdrop-filter: blur(30px);
-                ">
-              <div class="card-body p-5 shadow-5 text-center">
-                <h2 class="fw-bold mb-5">My image gallery</h2>
-                <form v-on:submit.prevent="login">
-                  <!-- Email input -->
-                  <div class="form-outline mb-4">
-                    <input type="email" id="userEmail" class="form-control" placeholder="Email adress" v-model="userEmail"/>
-                    <!-- <label class="form-label" for="userEmail">Email address</label> -->
-                  </div>
+<!-- aqui tenía el login de la app -->
+  <v-container>
+    <!-- <v-row class="text-center">
+      <v-col cols="12">
+        <v-img
+          :src="require('../assets/logo.svg')"
+          class="my-3"
+          contain
+          height="200"
+        />
+      </v-col>
 
-                  <!-- Password input -->
-                  <div class="form-outline mb-4">
-                    <input type="password" id="userPassword" class="form-control" placeholder="Password" v-model="userPassword"/>
-                    <!-- <label class="form-label" for="form3Example4">Password</label> -->
-                  </div>
+      <v-col class="mb-4"> -->
+        <h1 class="display-2 font-weight-bold mb-3">
+          Welcome to Vuetify
+        </h1>
 
-                  <!-- Submit button -->
-                  <button type="submit" class="btn btn-primary btn-block mb-4">
-                    Sign up
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
+        <!-- <p class="subheading font-weight-regular">
+          For help and collaboration with other Vuetify developers,
+          <br>please join our online
+          <a
+            href="https://community.vuetifyjs.com"
+            target="_blank"
+          >Discord Community</a>
+        </p>
+      </v-col>
 
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <img src="@/assets/background-app.jpeg" class="w-100 rounded-4 shadow-4"
-              alt="" />
-          </div>
-        </div>
-      </div>
-    <!-- Jumbotron -->
-  </section>
-  </div>
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
+        <h2 class="headline font-weight-bold mb-3">
+          What's next?
+        </h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(next, i) in whatsNext"
+            :key="i"
+            :href="next.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
+            {{ next.text }}
+          </a>
+        </v-row>
+      </v-col>
+
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
+        <h2 class="headline font-weight-bold mb-3">
+          Important Links
+        </h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(link, i) in importantLinks"
+            :key="i"
+            :href="link.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
+            {{ link.text }}
+          </a>
+        </v-row>
+      </v-col>
+
+      <v-col
+        class="mb-5"
+        cols="12"
+      >
+        <h2 class="headline font-weight-bold mb-3">
+          Ecosystem
+        </h2>
+
+        <v-row justify="center">
+          <a
+            v-for="(eco, i) in ecosystem"
+            :key="i"
+            :href="eco.href"
+            class="subheading mx-3"
+            target="_blank"
+          >
+            {{ eco.text }}
+          </a>
+        </v-row>
+      </v-col>
+    </v-row> -->
+  </v-container>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data: function() {
-    return {
-      userEmail: "",
-      userPassword: "",
-      loginError: false,
-      errorMsg: "",
-    }
-  },
-  methods: {
-    login() {
-      console.log(this.userPassword);
-    }
-  },
-  props: {
-    msg: String
+  export default {
+    name: 'HelloWorld',
+
+    data: () => ({
+      ecosystem: [
+        {
+          text: 'vuetify-loader',
+          href: 'https://github.com/vuetifyjs/vuetify-loader',
+        },
+        {
+          text: 'github',
+          href: 'https://github.com/vuetifyjs/vuetify',
+        },
+        {
+          text: 'awesome-vuetify',
+          href: 'https://github.com/vuetifyjs/awesome-vuetify',
+        },
+      ],
+      importantLinks: [
+        {
+          text: 'Documentation',
+          href: 'https://vuetifyjs.com',
+        },
+        {
+          text: 'Chat',
+          href: 'https://community.vuetifyjs.com',
+        },
+        {
+          text: 'Made with Vuetify',
+          href: 'https://madewithvuejs.com/vuetify',
+        },
+        {
+          text: 'Twitter',
+          href: 'https://twitter.com/vuetifyjs',
+        },
+        {
+          text: 'Articles',
+          href: 'https://medium.com/vuetify',
+        },
+      ],
+      whatsNext: [
+        {
+          text: 'Explore components',
+          href: 'https://vuetifyjs.com/components/api-explorer',
+        },
+        {
+          text: 'Select a layout',
+          href: 'https://vuetifyjs.com/getting-started/pre-made-layouts',
+        },
+        {
+          text: 'Frequently Asked Questions',
+          href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions',
+        },
+      ],
+    }),
   }
-}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
-
-  <style>
-    .cascading-right {
-      margin-right: -50px;
-    }
-
-    @media (max-width: 991.98px) {
-      .cascading-right {
-        margin-right: 0;
-      }
-    }
-
-    .hello{
-      background-color: rgba(245, 167, 179, 0.3);
-    }
-  </style>
