@@ -1,5 +1,5 @@
 <template>
-  <div class="content">Este será el template para cada tarjeta de pokemon
+  <div class="content">Este será el template para las tarjetas de pokemon
     <div v-for="(data, index) in pokemons" :key="index">
       <v-app id="inspire" class="height">
         <v-card
@@ -35,8 +35,9 @@
           <v-expand-transition>
             <div v-show="show">
               <v-divider></v-divider>
-              <!-- <v-card-text>
-              </v-card-text> -->
+                <v-card-text>
+                  Foto del primer {{data.name}} que encontré en mi ruta.
+                </v-card-text>
             </div>
           </v-expand-transition>
         </v-card>
