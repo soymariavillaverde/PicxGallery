@@ -1,0 +1,42 @@
+// aquí se ponen los estilos de todas las cards
+
+.cardsWrapper {
+    background: black;
+    flex: 1 0 30% !important;
+}
+
+.cardContent{
+    height: 200px;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.pokemonPic {
+    // height: 20vh;
+    width: 35%;
+    box-sizing: border-box;
+}
+
+.pokemonData{
+    width: 65%;
+    box-sizing: border-box;
+}
+
+.pokemonName{
+    display: flex !important;
+    flex-direction: rox !important;
+    justify-content: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pokemonDescription{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start;    
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

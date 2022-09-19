@@ -1,0 +1,21 @@
+footer// aquí se ponen los estilos del footer
+.backgroundFooter {
+    height: 50px;
+    padding: 0 10px;
+    background: linear-gradient(to right, #F1DCA9, #92D2D7);
+    color: rgb(50, 50, 50);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    .options {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        div {
+            margin: 0 2px
+        }
+    }
+    .copyright {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
