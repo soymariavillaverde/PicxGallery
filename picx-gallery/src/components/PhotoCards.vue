@@ -18,9 +18,9 @@
             <div class="pokemonDescription">
               <div>
                 <p class="descriptionTitle">Caption:</p>
-                  <v-card-text class="descriptionText">
+                  <p class="descriptionText">
                   Picture of the first {{data.name}} that I saw in my trip.
-                </v-card-text>
+                </p>
               </div>
             </div>
           </div>
