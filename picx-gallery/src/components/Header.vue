@@ -9,11 +9,11 @@
           />
         <div class="views" xs4 lg2>
           <div>
-            <router-link to="/"> Pictures </router-link>
+            <router-link to="/" class="links"> Pictures </router-link>
           </div>
           <div>|</div>
           <div>
-            <router-link to="/favorites"> Favorites </router-link>
+            <router-link to="/favorites" class="links"> Favorites </router-link>
           </div>
         </div>
       </div>

@@ -1,13 +1,12 @@
 <template>
   <v-container fluid>
     <v-row wrap >
-      <v-col v-for="(data, index) in pokemons" :key="index" :cols="data.flex" class="content cardsWrapper" xs12 md4 lg3>
+      <v-col v-for="(data, index) in pokemons" :key="index" :cols="data.flex" class="content cardsWrapper" xs12 md4 lg3 >
         <v-card class="cardContent">
           <v-img :src="data.img" class="pokemonPic"/>
-
           <div class="pokemonData">
-            <div class="pokemonName">
-              <v-card-title>
+            <div class="pokemonTitle">
+              <v-card-title class="pokemonName" >
                 <h4>{{data.name}}</h4>
               </v-card-title>
 
@@ -18,9 +17,9 @@
 
             <div class="pokemonDescription">
               <div>
-                <h5>Caption</h5>
-                  <v-card-text>
-                  Foto del primer {{data.name}} que encontré en mi ruta.
+                <p class="descriptionTitle">Caption:</p>
+                  <v-card-text class="descriptionText">
+                  Picture of the first {{data.name}} that I saw in my trip.
                 </v-card-text>
               </div>
             </div>
@@ -44,16 +43,11 @@ export default {
       pokemons: [],
     };
   },
-/*   methods: {
-    // ----------------------
-  }, */
   created() {
       for(let i = 0; i <= 35; i++) {
         axios
           .get(`https://pokeapi.co/api/v2/pokemon/${i + 1}`)
           .then((response) => {
-            //console.log('Todos los datos', response);
-            
             let pokemon = {
               name: response.data.name,
               img: response.data.sprites.front_default,
@@ -63,14 +57,7 @@ export default {
           .catch((err) => {
             console.log(err);
           })
-            // console.log('Arrray con pokemons', this.pokemons);
       }
   },
 }
 </script>
-
-<style>
-.height{
-  height: 600 px;
-}
-</style>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Header/>
-    <v-main>
+    <v-main  style="padding-top:150px">
       <router-view/>
     </v-main>
     <Footer/>
@@ -26,6 +26,4 @@ export default {
 };
 </script>
 
-<style lang="scss" src="./scss/main.scss">
-
-</style>
+<style lang="scss" src="./scss/main.scss"></style>
