@@ -10,8 +10,8 @@
                 <h4>{{data.name}}</h4>
               </v-card-title>
 
-              <v-btn icon @click="favorite = !favorite">
-                <v-icon color="red">{{ favorite ? "mdi-heart" : "mdi-heart-outline" }}</v-icon>
+              <v-btn icon>
+                <v-icon color="red">{{ "mdi-heart-outline" }}</v-icon>
               </v-btn>
             </div>
 
@@ -39,7 +39,6 @@ export default {
   data() {
     return {
       show: false,
-      favorite: false,
       pokemons: [],
     };
   },
